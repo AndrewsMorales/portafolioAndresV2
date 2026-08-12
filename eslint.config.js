@@ -20,4 +20,12 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    // Las pruebas exportan utilidades, no componentes, y usan los globales de Vitest.
+    files: ['**/*.test.{ts,tsx}', 'src/test/**/*.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
+    },
+  },
 ])
