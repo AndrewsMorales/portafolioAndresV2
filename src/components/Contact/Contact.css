@@ -1,0 +1,207 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(1.2rem, 3vw, 2rem);
+  align-items: start;
+}
+
+/* --- Formulario --- */
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.contact__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.1rem;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.contact__field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.contact__field input,
+.contact__field textarea {
+  width: 100%;
+  padding: 0.72rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  font-size: 0.94rem;
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    background 0.2s var(--ease);
+}
+
+.contact__field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: var(--text-dim);
+}
+
+.contact__field input:focus,
+.contact__field textarea:focus {
+  outline: none;
+  background: var(--surface);
+  border-color: color-mix(in srgb, var(--brand-1) 55%, transparent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-1) 16%, transparent);
+}
+
+.contact__field input[aria-invalid='true'],
+.contact__field textarea[aria-invalid='true'] {
+  border-color: color-mix(in srgb, var(--danger) 60%, transparent);
+}
+
+.contact__error {
+  font-size: 0.78rem;
+  color: var(--danger);
+}
+
+.contact__submit {
+  align-self: flex-start;
+}
+
+.contact__status {
+  font-size: 0.85rem;
+  color: var(--ok);
+  min-height: 1.4em;
+}
+
+/* --- Columna lateral --- */
+
+.contact__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact__card {
+  padding: 1.35rem;
+}
+
+.contact__cardTitle {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+}
+
+.contact__item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 0.35rem;
+  border-radius: var(--radius-sm);
+  text-align: left;
+  transition: background 0.2s var(--ease);
+}
+
+.contact__item:not(.contact__item--static):hover {
+  background: var(--surface-2);
+}
+
+.contact__itemIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--brand-1) 12%, transparent);
+  color: var(--brand-1);
+}
+
+.contact__itemBody {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.contact__itemLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.contact__itemValue {
+  font-size: 0.88rem;
+  overflow-wrap: anywhere;
+}
+
+.contact__copy {
+  flex-shrink: 0;
+  color: var(--text-dim);
+}
+
+.contact__item:hover .contact__copy {
+  color: var(--brand-1);
+}
+
+/* --- Redes --- */
+
+.contact__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact__socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  transition:
+    color 0.22s var(--ease),
+    border-color 0.22s var(--ease),
+    transform 0.22s var(--ease);
+}
+
+.contact__socialLink:hover {
+  color: var(--brand-1);
+  border-color: color-mix(in srgb, var(--brand-1) 45%, transparent);
+  transform: translateY(-2px);
+}
+
+.contact__cv {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .contact__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

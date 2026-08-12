@@ -1,0 +1,154 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: clamp(1.6rem, 4vw, 3rem);
+  align-items: start;
+}
+
+/* --- Texto --- */
+
+.about__prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  color: var(--text-soft);
+  font-size: clamp(1rem, 1.8vw, 1.06rem);
+}
+
+.about__prose p:first-child {
+  color: var(--text);
+  font-size: clamp(1.05rem, 2vw, 1.18rem);
+  font-weight: 500;
+}
+
+.about__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Ficha de datos --- */
+
+.about__facts {
+  padding: 1.5rem;
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+
+.about__factsTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.about__factList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  margin-top: 1.2rem;
+}
+
+.about__fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.about__factIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--brand-1) 12%, transparent);
+  color: var(--brand-1);
+}
+
+.about__factBody {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.about__factLabel {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.about__factValue {
+  font-size: 0.94rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.about__cv {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* --- Cómo trabajo --- */
+
+.about__strengthsTitle {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  margin-bottom: 1.4rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+}
+
+.about__strengths {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.about__strength {
+  padding: 1.35rem;
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.about__strength:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--brand-1) 35%, transparent);
+  box-shadow: var(--shadow-md);
+}
+
+.about__strengthIcon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--brand-grad);
+  color: #fff;
+  box-shadow: 0 10px 22px -12px color-mix(in srgb, var(--brand-1) 90%, transparent);
+}
+
+.about__strengthTitle {
+  margin-top: 1rem;
+  font-size: 1.02rem;
+}
+
+.about__strengthText {
+  margin-top: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about__facts {
+    position: static;
+  }
+}

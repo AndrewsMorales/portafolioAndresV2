@@ -1,0 +1,58 @@
+.focus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.focus__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.focus__track {
+  display: inline-flex;
+  padding: 4px;
+  gap: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.focus__option {
+  padding: 0.42rem 1rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  white-space: nowrap;
+  transition:
+    color 0.25s var(--ease),
+    background 0.25s var(--ease);
+}
+
+.focus__option:hover {
+  color: var(--text);
+}
+
+.focus__option.is-active {
+  background: var(--brand-grad);
+  color: #fff;
+  box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--brand-1) 80%, transparent);
+}
+
+.focus--inline .focus__option {
+  padding: 0.34rem 0.8rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 460px) {
+  .focus__option {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,311 @@
+.hero {
+  position: relative;
+  padding-top: calc(var(--nav-h) + clamp(2.5rem, 7vw, 5.5rem));
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+  overflow: hidden;
+}
+
+/* Halo de color detrás del contenido */
+.hero__aura {
+  position: absolute;
+  inset: -30% -10% auto -10%;
+  height: 90vh;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      42% 55% at 22% 32%,
+      color-mix(in srgb, var(--brand-1) 26%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      38% 48% at 78% 22%,
+      color-mix(in srgb, var(--brand-2) 22%, transparent),
+      transparent 72%
+    );
+  filter: blur(12px);
+}
+
+.hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+/* --- Texto --- */
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.hero__pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+}
+
+.hero__pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--ok);
+  animation: hero-pulse 2.2s var(--ease) infinite;
+}
+
+@keyframes hero-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+.hero__title {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hero__greeting {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-dim);
+}
+
+.hero__name {
+  font-size: clamp(2.2rem, 5.6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.hero__role {
+  margin-top: 0.9rem;
+  font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  animation: hero-swap 0.5s var(--ease);
+}
+
+@keyframes hero-swap {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.hero__pitch {
+  margin-top: 1rem;
+  max-width: 56ch;
+  color: var(--text-soft);
+  font-size: clamp(1rem, 1.9vw, 1.08rem);
+}
+
+.hero__focus {
+  margin-top: 1.8rem;
+}
+
+.hero__focusHint {
+  margin-top: 0.6rem;
+  font-size: 0.83rem;
+  color: var(--text-dim);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+}
+
+.hero__social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.9rem;
+  flex-wrap: wrap;
+}
+
+.hero__social a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-soft);
+  transition:
+    color 0.22s var(--ease),
+    border-color 0.22s var(--ease),
+    transform 0.22s var(--ease);
+}
+
+.hero__social a:hover {
+  color: var(--brand-1);
+  border-color: color-mix(in srgb, var(--brand-1) 45%, transparent);
+  transform: translateY(-2px);
+}
+
+.hero__socialText {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 0.4rem;
+  font-size: 0.86rem;
+  color: var(--text-dim);
+}
+
+/* --- Retrato --- */
+
+.hero__visual {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 380px);
+}
+
+.hero__portrait {
+  position: relative;
+  border-radius: var(--radius-lg);
+  padding: 6px;
+  background: var(--brand-grad);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__portrait::before {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: calc(var(--radius-lg) + 14px);
+  border: 1px dashed color-mix(in srgb, var(--brand-1) 35%, transparent);
+  pointer-events: none;
+}
+
+.hero__portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: calc(var(--radius-lg) - 6px);
+  background: var(--surface-2);
+}
+
+.hero__now {
+  position: absolute;
+  left: -8%;
+  bottom: -26px;
+  width: min(88%, 300px);
+  padding: 0.95rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero__nowLabel {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-1);
+}
+
+.hero__nowRole {
+  margin-top: 0.25rem;
+  font-size: 0.92rem;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.hero__nowStack {
+  margin-top: 0.3rem;
+  color: var(--text-dim);
+}
+
+/* --- Cifras --- */
+
+.hero__stats {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: clamp(3.5rem, 7vw, 5rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 1.2rem clamp(0.8rem, 2vw, 1.6rem);
+  background: var(--surface);
+}
+
+.hero__statValue {
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  background: var(--brand-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__statLabel {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  line-height: 1.35;
+}
+
+/* --- Adaptaciones --- */
+
+@media (max-width: 940px) {
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__visual {
+    order: -1;
+    width: min(100%, 300px);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero__now {
+    left: auto;
+    right: -6%;
+    bottom: -22px;
+    width: min(80%, 260px);
+  }
+}
+
+@media (max-width: 620px) {
+  .hero__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,268 @@
+.exp__tabs {
+  display: inline-flex;
+  gap: 2px;
+  margin-top: 1.5rem;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.exp__tab {
+  padding: 0.45rem 1.05rem;
+  border-radius: 999px;
+  font-size: 0.87rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  transition:
+    color 0.22s var(--ease),
+    background 0.22s var(--ease);
+}
+
+.exp__tab:hover {
+  color: var(--text);
+}
+
+.exp__tab.is-active {
+  background: var(--brand-grad);
+  color: #fff;
+}
+
+/* --- Línea de tiempo --- */
+
+.exp__timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding-left: 1.9rem;
+}
+
+.exp__timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--brand-1) 55%, transparent),
+    var(--border) 85%
+  );
+}
+
+.exp__item {
+  position: relative;
+}
+
+.exp__marker {
+  position: absolute;
+  left: -1.9rem;
+  top: 1.55rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  background: var(--border-strong);
+}
+
+.exp__item.is-current .exp__marker {
+  background: var(--brand-grad);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--brand-1) 20%, transparent);
+}
+
+.exp__card {
+  padding: 1.4rem clamp(1.1rem, 2.5vw, 1.6rem);
+  transition:
+    border-color 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.exp__card:hover {
+  border-color: color-mix(in srgb, var(--brand-1) 30%, transparent);
+  box-shadow: var(--shadow-md);
+}
+
+.exp__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.7rem 1.2rem;
+}
+
+.exp__headMain {
+  min-width: 0;
+}
+
+.exp__role {
+  font-size: clamp(1.02rem, 2.1vw, 1.2rem);
+}
+
+.exp__company {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.exp__sep {
+  margin-inline: 0.45rem;
+  color: var(--text-dim);
+}
+
+.exp__arrangement {
+  color: var(--text-dim);
+}
+
+.exp__dates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.exp__now {
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ok) 16%, transparent);
+  color: var(--ok);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.exp__range {
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.exp__duration {
+  font-size: 0.76rem;
+  color: var(--text-dim);
+}
+
+.exp__summary {
+  margin-top: 0.9rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.exp__subhead {
+  margin-top: 1.15rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.exp__highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-top: 0.65rem;
+}
+
+.exp__highlights li {
+  position: relative;
+  padding-left: 1.35rem;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+
+.exp__highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-grad);
+}
+
+.exp__stack {
+  margin-top: 1.15rem;
+}
+
+.exp__toggle {
+  margin: 1.6rem 0 0 1.9rem;
+}
+
+/* --- Certificaciones --- */
+
+.exp__certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1rem;
+}
+
+.exp__cert {
+  padding: 1.4rem;
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+.exp__cert:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--brand-1) 32%, transparent);
+}
+
+.exp__certIcon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--brand-1) 13%, transparent);
+  color: var(--brand-1);
+}
+
+.exp__certName {
+  margin-top: 0.9rem;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.exp__certIssuer {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.exp__certId {
+  margin-top: 0.55rem;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 620px) {
+  .exp__dates {
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .exp__timeline {
+    padding-left: 1.5rem;
+  }
+
+  .exp__marker {
+    left: -1.5rem;
+  }
+
+  .exp__toggle {
+    margin-left: 1.5rem;
+  }
+}
