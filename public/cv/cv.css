@@ -1,0 +1,386 @@
+/* ============================================================
+   Hoja de vida — diseño para impresión A4 / PDF.
+   Una sola columna: legible para personas y parseable por ATS.
+   ============================================================ */
+
+@page {
+  size: A4;
+  margin: 11mm 13mm 10mm;
+}
+
+:root {
+  --ink: #14161c;
+  --ink-soft: #3f4654;
+  --ink-dim: #6a7283;
+  --rule: #d9dde6;
+  --rule-soft: #eceff5;
+  --accent: #3f3391;
+  --accent-soft: #f0eefb;
+  --ok: #0d6b4d;
+  --ok-soft: #e7f4ef;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 8.45pt;
+  line-height: 1.31;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ---------- Cabecera ---------- */
+
+.head {
+  border-bottom: 2.2pt solid var(--accent);
+  padding-bottom: 6pt;
+  margin-bottom: 8pt;
+}
+
+.head__name {
+  font-size: 20.5pt;
+  font-weight: 800;
+  letter-spacing: -0.6pt;
+  line-height: 1.05;
+}
+
+.head__role {
+  margin-top: 2pt;
+  font-size: 10.6pt;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1pt;
+}
+
+.head__contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3pt 12pt;
+  margin-top: 6pt;
+  font-size: 8.6pt;
+  color: var(--ink-soft);
+}
+
+.head__contact span::before {
+  content: "";
+  display: inline-block;
+  width: 3pt;
+  height: 3pt;
+  margin-right: 4.5pt;
+  vertical-align: 1.5pt;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ---------- Secciones ---------- */
+
+.section {
+  margin-top: 6pt;
+  break-inside: auto;
+}
+
+.section__title {
+  font-size: 8.2pt;
+  font-weight: 800;
+  letter-spacing: 1.3pt;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 2pt;
+  border-bottom: 0.7pt solid var(--rule);
+  margin-bottom: 5pt;
+}
+
+.summary {
+  color: var(--ink-soft);
+  text-align: justify;
+}
+
+.summary strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Puntos fuertes ---------- */
+
+.edge {
+  display: flex;
+  flex-direction: column;
+  gap: 3pt;
+}
+
+.edge li {
+  position: relative;
+  padding-left: 11pt;
+  color: var(--ink-soft);
+}
+
+.edge li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4.2pt;
+  width: 4.5pt;
+  height: 4.5pt;
+  border-radius: 1pt;
+  background: var(--accent);
+}
+
+.edge strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Experiencia ---------- */
+
+.job {
+  break-inside: avoid;
+  padding-bottom: 4.5pt;
+  margin-bottom: 4.5pt;
+  border-bottom: 0.7pt solid var(--rule-soft);
+}
+
+.job:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.job__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10pt;
+}
+
+.job__title {
+  font-size: 9.9pt;
+  font-weight: 750;
+  letter-spacing: -0.15pt;
+}
+
+.job__org {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.job__meta {
+  flex-shrink: 0;
+  text-align: right;
+  font-size: 8.3pt;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.job__mode {
+  display: block;
+  font-size: 7.9pt;
+}
+
+.job__intro {
+  margin-top: 3pt;
+  color: var(--ink-soft);
+}
+
+.job__points {
+  margin-top: 3pt;
+  display: flex;
+  flex-direction: column;
+  gap: 1.9pt;
+}
+
+.job__points li {
+  position: relative;
+  padding-left: 10pt;
+  color: var(--ink-soft);
+}
+
+.job__points li::before {
+  content: "–";
+  position: absolute;
+  left: 1pt;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.job__points b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.job__stack {
+  margin-top: 4pt;
+  font-size: 7.9pt;
+  color: var(--ink-dim);
+}
+
+.job__stack b {
+  color: var(--ink-soft);
+  font-weight: 700;
+  letter-spacing: 0.3pt;
+  text-transform: uppercase;
+  font-size: 7.6pt;
+}
+
+/* Cifras comprobables */
+
+.figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4pt;
+  margin-top: 4pt;
+}
+
+.figures li {
+  padding: 2.5pt 6pt;
+  border: 0.7pt solid var(--rule);
+  border-radius: 3pt;
+  background: var(--accent-soft);
+  font-size: 8.1pt;
+  color: var(--ink-soft);
+}
+
+.figures b {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+/* ---------- Dos columnas (educación / certificaciones) ---------- */
+
+.split {
+  display: flex;
+  gap: 16pt;
+}
+
+.split > * {
+  flex: 1;
+  min-width: 0;
+}
+
+.study {
+  margin-bottom: 2.6pt;
+}
+
+.study:last-child {
+  margin-bottom: 0;
+}
+
+.study__name {
+  font-size: 8.7pt;
+  font-weight: 700;
+}
+
+.study__meta {
+  font-size: 8.1pt;
+  color: var(--ink-dim);
+}
+
+/* ---------- Habilidades ---------- */
+
+.skills__row {
+  display: flex;
+  gap: 8pt;
+  align-items: baseline;
+  padding: 2.5pt 0;
+  border-bottom: 0.7pt solid var(--rule-soft);
+}
+
+.skills__row:last-child {
+  border-bottom: none;
+}
+
+.skills__tier {
+  flex: 0 0 92pt;
+  font-size: 7.7pt;
+  font-weight: 800;
+  letter-spacing: 0.5pt;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.skills__tier--daily {
+  color: var(--ok);
+}
+
+.skills__tier--shipped {
+  color: var(--accent);
+}
+
+.skills__items {
+  color: var(--ink-soft);
+}
+
+.skills__group {
+  display: block;
+  margin-bottom: 1.5pt;
+}
+
+.skills__group b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* El bloque final va más apretado para cerrar en dos páginas */
+.split .section {
+  margin-top: 5pt;
+}
+
+.split .study {
+  margin-bottom: 1.9pt;
+}
+
+.split .study__name {
+  font-size: 8.4pt;
+}
+
+.split .study__meta {
+  font-size: 7.8pt;
+}
+
+/* ---------- Pie ---------- */
+
+.foot {
+  margin-top: 5pt;
+  padding-top: 4pt;
+  border-top: 0.7pt solid var(--rule);
+  font-size: 8pt;
+  color: var(--ink-dim);
+  display: flex;
+  justify-content: space-between;
+  gap: 10pt;
+}
+
+/* Salto de página controlado */
+.page-break {
+  break-before: page;
+}
+
+/* En pantalla se simula la hoja, para revisarlo sin imprimir */
+@media screen {
+  body {
+    background: #eef0f5;
+    padding: 24px 12px;
+  }
+
+  .sheet {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 13mm 14mm;
+    background: #fff;
+    box-shadow: 0 10px 40px rgb(20 22 28 / 0.18);
+  }
+}

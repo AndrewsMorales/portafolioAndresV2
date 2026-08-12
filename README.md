@@ -1,75 +1,70 @@
-# portafolioAndresV2
-Version nueva de mi portafolio 2026
-# React + TypeScript + Vite
+# Portafolio de Andrés Morales — v2
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Segunda versión de mi portafolio, reescrita en **React 19 + TypeScript + Vite**.
+La [v1](https://github.com/AndrewsMorales/Portafolio_AndresMorales) estaba hecha
+en HTML, CSS y jQuery puro.
 
-Currently, two official plugins are available:
+🔗 https://portafolio-andres-morales.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Qué tiene
 
-## React Compiler
+- **Selector de perfil (Full Stack / Backend / Frontend).** Cambia el titular, el
+  texto de presentación, el orden de las categorías de habilidades y el filtro de
+  proyectos, para que un reclutador vea primero lo que le interesa.
+- **Bilingüe es/en de verdad.** Todo el texto pasa por el sistema de i18n. Las
+  claves del diccionario están tipadas contra el español, así que si falta una
+  traducción **la compilación falla**.
+- **Tema claro / oscuro** que arranca siguiendo al sistema y recuerda la elección.
+- **Accesibilidad:** navegación por teclado, `aria-*` en pestañas y filtros, salto
+  al contenido, foco visible y respeto por `prefers-reduced-motion`.
+- **Sin dependencias de UI.** Los iconos son SVG propios y el CSS está escrito a
+  mano; el único paquete en producción es React.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Niveles de habilidad honestos.** Nada de porcentajes inventados: cada tecnología
+  está en el tramo que se puede sostener en una entrevista (uso diario / he
+  entregado / conocimiento de apoyo).
+- **Cifras comprobables por proyecto.** Salen del repositorio (commits, tablas,
+  módulos), no de una estimación.
+- **CV en español e inglés** generado desde `public/cv/*.html` con Chromium
+  headless; el botón de descarga sirve el PDF del idioma activo.
 
-## Expanding the ESLint configuration
+## Regenerar el CV
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd public && python3 -m http.server 8912 &
+CHROME=".../chrome-headless-shell"      # o Chrome/Brave instalado
+"$CHROME" --headless --no-pdf-header-footer \
+  --print-to-pdf=public/docs/CV-Andres-Morales-ES.pdf \
+  http://127.0.0.1:8912/cv/es.html
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Estructura
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```
+src/
+  i18n/         es.ts · en.ts · types.ts   ← diccionarios y tipos
+  state/        contexto de idioma, tema y perfil
+  data/         perfil, experiencia, educación, habilidades y proyectos
+  hooks/        useReveal · useActiveSection
+  components/   una carpeta por sección, cada una con su .tsx y su .css
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Reglas que sigue el código
+
+- **CSS y JS separados del marcado.** Ningún `<style>`, ninguna hoja de estilos
+  embebida y ningún `style="..."` estático: cada componente tiene su archivo
+  `.css` al lado. Los únicos estilos en línea son variables CSS que dependen de
+  datos en tiempo de ejecución (el ancho de una barra de nivel, el retardo de una
+  animación, el matiz de una portada).
+- **Todo texto visible existe en español e inglés.** Las cadenas de interfaz viven
+  en `src/i18n`; las de contenido, junto al dato, como `{ es, en }`.
+
+## Comandos
+
+```bash
+npm install
+npm run dev      # servidor de desarrollo
+npm run build    # typecheck + build de producción
+npm run lint     # eslint
+npm run preview  # sirve el build
 ```

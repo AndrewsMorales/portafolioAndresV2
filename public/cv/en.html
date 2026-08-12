@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Andrés David Morales Castro — Full Stack Developer</title>
+    <meta name="author" content="Andrés David Morales Castro" />
+    <link rel="stylesheet" href="cv.css" />
+  </head>
+  <body>
+    <main class="sheet">
+      <header class="head">
+        <h1 class="head__name">Andrés David Morales Castro</h1>
+        <p class="head__role">Full Stack Developer · PHP / Laravel · JavaScript</p>
+        <div class="head__contact">
+          <span>Bogotá D.C., Colombia — remote</span>
+          <span>+57 301 649 0791</span>
+          <span>andresdavidmoralescastro0@gmail.com</span>
+          <span>linkedin.com/in/andres-david-morales-castro-54b12715a</span>
+          <span>github.com/AndrewsMorales</span>
+          <span>portafolio-andres-morales.vercel.app</span>
+          <span>Spanish (native) · English (intermediate)</span>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2 class="section__title">Profile</h2>
+        <p class="summary">
+          Full stack developer with <strong>4 years</strong> building business software that runs in
+          production: CRMs, ERPs and intranets for retail, distribution and service companies. I work
+          remotely for <strong>Smart Tech Software (Delaware, USA)</strong>, where I am the
+          <strong>lead developer of a Laravel 12 CRM</strong> —384 of the repository's 452 commits—
+          and contribute across all three layers of a multi-tenant ERP: Laravel web app, Go API and
+          offline-first Flutter app. My strength is carrying a requirement from the data model all
+          the way to the interface, including the third-party integrations nobody wants to touch.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">What sets me apart</h2>
+        <ul class="edge">
+          <li>
+            <strong>Integrations with systems I do not control.</strong> Siigo, Siesa, ICG, Airtable,
+            QuickBooks, Mercado Libre, Zona Pagos (PSE · BBVA) and MikroTik devices via remote
+            commands: poorly documented APIs and data that has to be reconciled between systems that
+            do not talk to each other.
+          </li>
+          <li>
+            <strong>Offline-first synchronization on three fronts.</strong> An offline PWA queue, a
+            local Drift/SQLite database in Flutter and an incremental-changes endpoint in Go: solved
+            on the web, mobile and server sides of the same product.
+          </li>
+          <li>
+            <strong>Bilingual by design.</strong> Everything I ship exists in Spanish and English
+            from the first commit, through the project's i18n system.
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">Professional experience</h2>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Full Stack Developer · <span class="job__org">Smart Tech Software, LLC</span>
+            </h3>
+            <div class="job__meta">
+              Feb 2026 — Present
+              <span class="job__mode">Service contract · Remote (USA)</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Building business and e-commerce platforms across four products in parallel: an
+            operational CRM, a route-sales ERP, the company's project manager and its corporate site.
+          </p>
+          <ul class="job__points">
+            <li>
+              <b>Fayette CRM (Laravel 12):</b> lead developer. Leads, clients, projects, tasks,
+              installers, shipments and a stage-based production board, over 30 domain tables and 70
+              migrations.
+            </li>
+            <li>
+              <b>Real time and offline:</b> live tasks and notifications with Laravel Reverb and
+              Echo, plus an offline PWA queue that lets users create tasks with no signal and upload
+              them once back online.
+            </li>
+            <li>
+              <b>Data migration:</b> reversible import from Airtable and QuickBooks with parsing,
+              preview review and a sync panel, preserving the timeline that already existed in the
+              system.
+            </li>
+            <li>
+              <b>SelBuk AI (multi-tenant ERP):</b> Routes and Visits modules with an interactive
+              Leaflet + OpenStreetMap map, AI Reorder, multi-order Returns, Reports, Payments
+              received and the RBAC permission matrix.
+            </li>
+            <li>
+              <b>Go API and Flutter app:</b> REST endpoints, SQL migrations and incremental sync for
+              those modules, plus their offline-first mobile version with Drift/SQLite, infinite
+              scroll and RBAC applied to the menu.
+            </li>
+            <li>
+              <b>flixwai.com and its project manager:</b> full corporate site with no framework
+              (custom PHP, CSS and JS, PHPMailer, SEO) and an internal Laravel 12 tool with versions,
+              visual approvals and prototypes.
+            </li>
+            <li>
+              <b>Delivery:</b> automated deployments with GitHub Actions to development and
+              production, with the OS scheduler and per-environment variables.
+            </li>
+          </ul>
+          <ul class="figures">
+            <li><b>384/452</b> commits on Fayette CRM</li>
+            <li><b>187</b> commits across SelBuk AI's 3 repos</li>
+            <li><b>4</b> products in parallel</li>
+          </ul>
+          <p class="job__stack">
+            <b>Stack</b> · Laravel 12, PHP 8.2, Go, Flutter, Alpine.js, jQuery, Tailwind CSS,
+            Laravel Reverb, MySQL, PostgreSQL, Vite, GitHub Actions
+          </p>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">Full Stack Developer · <span class="job__org">naw!</span></h3>
+            <div class="job__meta">
+              Sep 2025 — Jan 2026
+              <span class="job__mode">Project contract · Remote</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Sales and installation-order management app for home services, covering the flow from the
+            commercial request to technical execution in the field.
+          </p>
+          <ul class="job__points">
+            <li>
+              <b>Network hardware:</b> direct interaction with MikroTik devices through remote
+              command execution to configure network parameters, activations and operational settings
+              for contracted services.
+            </li>
+            <li>
+              <b>Automated invoicing:</b> Siigo API integration for client creation, invoice issuing
+              and cash receipts, keeping accounting consistent between the commercial and
+              administrative systems.
+            </li>
+            <li>
+              <b>Payments:</b> Zona Pagos (BBVA) integration to process PSE transactions inside the
+              commercial flow.
+            </li>
+          </ul>
+          <p class="job__stack"><b>Stack</b> · PHP, JavaScript, MikroTik API, Siigo API, Zona Pagos (PSE), MySQL</p>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Frontend Developer (with backend support) ·
+              <span class="job__org">PsicoAlianza</span>
+            </h3>
+            <div class="job__meta">
+              Jan 2025 — Jan 2026
+              <span class="job__mode">Full-time · Hybrid</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            ATS for recruitment: psychometric tests, job postings, candidate evaluation and requests.
+          </p>
+          <ul class="job__points">
+            <li>
+              Dynamic interfaces and interactive components with state handling, validation, events
+              and asynchronous communication with the backend.
+            </li>
+            <li>
+              Creation and tuning of endpoints, transactional logic and data normalization across
+              modules to keep the recruitment flow consistent.
+            </li>
+          </ul>
+          <p class="job__stack"><b>Stack</b> · Laravel, PHP, JavaScript, CSS, MySQL, Scrum</p>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Web Developer · <span class="job__org">Waplicaciones S.A.S.</span>
+            </h3>
+            <div class="job__meta">
+              Mar 2024 — Jan 2025
+              <span class="job__mode">Full-time · Hybrid</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Development on Symfony and Drupal with JavaScript, AJAX and REST API consumption and
+            creation, on internal-process applications for several clients.
+          </p>
+          <ul class="job__points">
+            <li>
+              <b>Interdrogas:</b> led the purchase-request system integrated with Siesa through
+              synchronized API services, improving supply-chain efficiency.
+            </li>
+            <li>
+              <b>Coopicrédito:</b> interactive room-booking calendar with availability validation and
+              automated handling of credit requests.
+            </li>
+            <li>
+              <b>Impresistem:</b> partner-selection application, integrating modules and interface
+              validation.
+            </li>
+          </ul>
+          <p class="job__stack"><b>Stack</b> · Symfony, Drupal, PHP, JavaScript, AJAX, REST API, Siesa, MySQL</p>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Full Stack Developer · <span class="job__org">BismmaSoft</span>
+            </h3>
+            <div class="job__meta">
+              Sep 2023 — Oct 2023
+              <span class="job__mode">Project contract · Remote</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Asset appraisal and business valuation platform with subscriptions (activosyvalores.com).
+          </p>
+          <ul class="job__points">
+            <li>
+              Backend architecture for users, roles, persistence and transactional operations, with
+              data integrity and traceability.
+            </li>
+            <li>
+              Mercado Libre payment gateway over REST APIs, with status validation, callbacks and a
+              historical transaction log.
+            </li>
+          </ul>
+          <p class="job__stack"><b>Stack</b> · PHP, JavaScript, AJAX, Mercado Libre API, MySQL, Bootstrap</p>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Web Programmer · <span class="job__org">Inversiones Azulado S.A.S.</span>
+            </h3>
+            <div class="job__meta">
+              Aug 2022 — Oct 2023
+              <span class="job__mode">Full-time · Hybrid</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Custom intranets for supermarkets and small retailers, taking part in the whole cycle:
+            requirements, analysis, implementation and deployment.
+          </p>
+          <ul class="job__points">
+            <li>
+              <b>ICG interoperability</b> to synchronize inventory, sales and product control in real
+              time between the client's platforms and their existing software.
+            </li>
+            <li>
+              Dynamic admin panels with WordPress, JavaScript and jQuery, plus the landing page for
+              the "Modo Avión" flight-simulator project.
+            </li>
+          </ul>
+          <p class="job__stack"><b>Stack</b> · PHP, WordPress, JavaScript, jQuery, Bootstrap, CSS, MySQL, ICG</p>
+        </article>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">Earlier support &amp; IT experience</h2>
+        <p class="summary">
+          <b>Teleperformance</b> — technical support, Vodafone Spain campaign (2022). <b>Disproel S.A.</b>
+          — support during the 2022 congressional election count. <b>Telefónica (Movistar)</b> — SENA
+          apprentice (2021): automated the bulk data load through Excel files.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">Technical skills</h2>
+        <div class="skills__row">
+          <div class="skills__tier skills__tier--daily">Daily use</div>
+          <div class="skills__items">
+            <span class="skills__group"
+              ><b>Backend:</b> PHP 8 · Laravel 12 · REST APIs · MySQL/MariaDB · Eloquent ORM</span
+            >
+            <span class="skills__group"
+              ><b>Frontend:</b> JavaScript (ES6+) · HTML5 · CSS3/Sass · Blade · Alpine.js · jQuery ·
+              Tailwind CSS · Vite · responsive design · i18n</span
+            >
+            <span class="skills__group"><b>Tooling:</b> Git and GitHub · Scrum</span>
+          </div>
+        </div>
+        <div class="skills__row">
+          <div class="skills__tier skills__tier--shipped">Shipped with</div>
+          <div class="skills__items">
+            <span class="skills__group"
+              ><b>Backend:</b> Symfony · Go · multi-tenant and RBAC · WebSockets (Reverb/Echo) ·
+              queues, jobs and cron · PostgreSQL · SQLite · SQL Server</span
+            >
+            <span class="skills__group"
+              ><b>Frontend and mobile:</b> React · TypeScript · Bootstrap · PWA and offline mode ·
+              Leaflet/OpenStreetMap · Flutter/Dart · Drift/SQLite · ML Kit (on-device OCR)</span
+            >
+            <span class="skills__group"
+              ><b>Integrations:</b> Siigo · Siesa · ICG · Airtable · Mercado Libre · Zona Pagos
+              (PSE) · MikroTik · PhpSpreadsheet</span
+            >
+            <span class="skills__group"
+              ><b>Delivery:</b> GitHub Actions (CI/CD) · Linux and deployments · WordPress · Drupal ·
+              Kanban</span
+            >
+          </div>
+        </div>
+        <div class="skills__row">
+          <div class="skills__tier">Working knowledge</div>
+          <div class="skills__items">
+            Angular · Ionic + Capacitor · Riverpod · Firebase · Docker
+          </div>
+        </div>
+      </section>
+
+      <div class="split">
+        <section class="section">
+          <h2 class="section__title">Education</h2>
+          <div class="study">
+            <p class="study__name">Software Engineering</p>
+            <p class="study__meta">Corp. Universitaria Iberoamericana · Oct 2021 — May 2024</p>
+          </div>
+          <div class="study">
+            <p class="study__name">Technologist in Information Systems Analysis (ADSI)</p>
+            <p class="study__meta">SENA · Jan 2020 — Jul 2021</p>
+          </div>
+          <div class="study">
+            <p class="study__name">Software Programming Technician</p>
+            <p class="study__meta">SENA · with the IBM P-TECH program · 2018 — 2019</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">Certifications</h2>
+          <div class="study">
+            <p class="study__name">Introduction to Cybersecurity</p>
+            <p class="study__meta">Platzi · Jan 2025</p>
+          </div>
+          <div class="study">
+            <p class="study__name">Remote Work and Organizational Change</p>
+            <p class="study__meta">Platzi · Jan 2025</p>
+          </div>
+          <div class="study">
+            <p class="study__name">Effective Time Management</p>
+            <p class="study__meta">Platzi · Feb 2025</p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="foot">
+        <span>Andrés David Morales Castro · Full Stack Developer</span>
+        <span>portafolio-andres-morales.vercel.app</span>
+      </footer>
+    </main>
+  </body>
+</html>
