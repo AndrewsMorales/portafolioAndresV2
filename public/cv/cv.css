@@ -284,6 +284,12 @@ ul {
   font-weight: 700;
 }
 
+.study__name em {
+  font-weight: 600;
+  font-style: normal;
+  color: var(--accent);
+}
+
 .study__meta {
   font-size: 8.1pt;
   color: var(--ink-dim);

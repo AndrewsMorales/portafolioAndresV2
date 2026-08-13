@@ -218,7 +218,6 @@ export const projects: Project[] = [
       { value: '13', label: { es: 'migraciones', en: 'migrations' } },
     ],
     hue: 96,
-    repo: 'https://github.com/AndrewsMorales/cuentas.moracode',
   },
   {
     id: 'activos-valores',
@@ -227,8 +226,8 @@ export const projects: Project[] = [
     context: { es: 'BismmaSoft', en: 'BismmaSoft' },
     year: '2023',
     summary: {
-      es: 'Aplicativo para el avalúo de activos y la valoración empresarial, con carrito de compras dinámico para contratar suscripciones. Gestión de usuarios y roles, operaciones transaccionales y pasarela de pago de Mercado Libre con validación de estados, callbacks e histórico de transacciones.',
-      en: 'Application for asset appraisal and business valuation, with a dynamic shopping cart to purchase subscriptions. User and role management, transactional operations and a Mercado Libre payment gateway with status validation, callbacks and a transaction history.',
+      es: 'Aplicativo para el avalúo de activos y la valoración empresarial, con carrito de compras dinámico para contratar suscripciones. Estuvo publicado en activosyvalores.com; el dominio ya no está activo. Gestión de usuarios y roles, operaciones transaccionales y pasarela de pago de Mercado Libre con validación de estados, callbacks e histórico de transacciones.',
+      en: 'Application for asset appraisal and business valuation, with a dynamic shopping cart to purchase subscriptions. It was live at activosyvalores.com; the domain is no longer active. User and role management, transactional operations and a Mercado Libre payment gateway with status validation, callbacks and a transaction history.',
     },
     role: {
       es: 'Desarrollo full stack: arquitectura del backend, integración de pagos e interfaz interactiva con AJAX.',
@@ -238,7 +237,6 @@ export const projects: Project[] = [
     tags: ['fullstack', 'backend'],
     image: '/images/fotoActivosYValores.jpg',
     hue: 145,
-    live: 'https://activosyvalores.com',
   },
   {
     id: 'impresistem',
@@ -432,7 +430,6 @@ export const projects: Project[] = [
     tags: ['frontend'],
     image: '/images/fotoPortafolioAndresMorales.jpg',
     hue: 262,
-    live: 'https://portafolio-andres-morales.vercel.app',
     repo: 'https://github.com/AndrewsMorales/Portafolio_AndresMorales',
   },
 ];

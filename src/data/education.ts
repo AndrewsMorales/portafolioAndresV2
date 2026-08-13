@@ -16,10 +16,10 @@ export const studies: Study[] = [
       en: 'Software Engineering',
     },
     school: 'Corporación Universitaria Iberoamericana',
-    period: { es: 'Oct 2021 – May 2024', en: 'Oct 2021 – May 2024' },
+    period: { es: 'Oct 2021 – Actualidad', en: 'Oct 2021 – Present' },
     note: {
-      es: 'Programa enfocado en desarrollo, análisis, diseño y gestión de sistemas de software, con metodologías ágiles, bases de datos y un proyecto de software integrador. Homologada con el tecnólogo.',
-      en: 'Program focused on software development, analysis, design and systems management, covering agile methodologies, databases and an integrative software project. Credited against the technologist degree.',
+      es: 'En curso: retomé el programa tras una pausa. Enfocado en desarrollo, análisis, diseño y gestión de sistemas de software, con metodologías ágiles, bases de datos y un proyecto integrador. Homologada con el tecnólogo.',
+      en: 'In progress: I resumed the program after a break. Focused on software development, analysis, design and systems management, covering agile methodologies, databases and an integrative project. Credited against the technologist degree.',
     },
   },
   {

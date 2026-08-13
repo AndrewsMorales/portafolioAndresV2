@@ -194,8 +194,8 @@ export const jobs: Job[] = [
     end: '2023-10',
     kind: 'dev',
     summary: {
-      es: 'Aplicativo web para avalúo de activos y valoración empresarial, con un flujo de suscripción basado en carrito de compras dinámico. Publicado en activosyvalores.com.',
-      en: 'Web application for asset appraisal and business valuation, with a subscription flow built on a dynamic shopping cart. Live at activosyvalores.com.',
+      es: 'Aplicativo web para avalúo de activos y valoración empresarial, con un flujo de suscripción basado en carrito de compras dinámico. ',
+      en: 'Web application for asset appraisal and business valuation, with a subscription flow built on a dynamic shopping cart. ',
     },
     highlights: [
       {
