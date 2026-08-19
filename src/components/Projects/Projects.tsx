@@ -25,11 +25,16 @@ const FILTER_FOR_FOCUS: Record<Focus, Filter> = {
   frontend: 'frontend',
 };
 
-/** Dos letras para la portada generada: iniciales, o las dos primeras si es una sola palabra. */
+/**
+ * Dos letras para la portada generada: iniciales, o las dos primeras si es una
+ * sola palabra. Se descartan los trozos que no empiezan por letra —el punto
+ * medio de «Pedidos · Flujo de estados» es una palabra para `split`, pero no
+ * una inicial.
+ */
 function initialsOf(title: string): string {
-  const words = title.split(/\s+/).filter(Boolean);
+  const words = title.split(/\s+/).filter((word) => /^\p{L}/u.test(word));
   const letters =
-    words.length > 1 ? words.slice(0, 2).map((word) => word[0]).join('') : title.slice(0, 2);
+    words.length > 1 ? words.slice(0, 2).map((word) => word[0]).join('') : (words[0] ?? title).slice(0, 2);
   return letters.toUpperCase();
 }
 

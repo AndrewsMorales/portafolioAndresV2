@@ -65,6 +65,10 @@ export const jobs: Job[] = [
         en: 'The flixwai.com corporate site end to end (framework-free PHP, CSS and JavaScript, PHPMailer, SEO and Open Graph) and development of the internal project manager in Laravel 12: versions, visual approvals, prototypes, comments and custom email templates.',
       },
       {
+        es: 'Nueva app móvil nativa de Invoice AI escrita desde cero en Flutter: offline-first con Drift/SQLite contra la misma API y la misma cuenta que la versión publicada, PDF de la factura generado en el dispositivo y aviso de facturas vencidas según el huso horario del usuario. Publicada en TestFlight.',
+        en: 'A new native Invoice AI mobile app written from scratch in Flutter: offline-first on Drift/SQLite against the same API and account as the published version, invoice PDFs built on the device and overdue-invoice alerts based on the user\u2019s time zone. Shipped to TestFlight.',
+      },
+      {
         es: 'Despliegues automatizados con GitHub Actions hacia entornos de desarrollo y producción, incluyendo scheduler del sistema, symlinks de almacenamiento y variables por entorno.',
         en: 'Automated deployments with GitHub Actions to development and production environments, including the OS scheduler, storage symlinks and per-environment variables.',
       },
@@ -73,6 +77,8 @@ export const jobs: Job[] = [
       'Laravel 12',
       'PHP 8.2',
       'Go',
+      'Drift / SQLite',
+      'Firebase',
       'Flutter',
       'Angular',
       'Alpine.js',
