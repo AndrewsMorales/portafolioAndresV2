@@ -104,6 +104,12 @@
               visual approvals and prototypes.
             </li>
             <li>
+              <b>Invoice AI (Flutter):</b> a new native mobile app written from scratch,
+              offline-first on Drift/SQLite against the same API and the same account as the
+              published version; invoice PDFs built on the device and overdue alerts per time zone.
+              Shipped to TestFlight.
+            </li>
+            <li>
               <b>Delivery:</b> automated deployments with GitHub Actions to development and
               production, with the OS scheduler and per-environment variables.
             </li>
@@ -114,8 +120,8 @@
             <li><b>4</b> products in parallel</li>
           </ul>
           <p class="job__stack">
-            <b>Stack</b> · Laravel 12, PHP 8.2, Go, Flutter, Alpine.js, jQuery, Tailwind CSS,
-            Laravel Reverb, MySQL, PostgreSQL, Vite, GitHub Actions
+            <b>Stack</b> · Laravel 12, PHP 8.2, Go, Flutter/Dart, Drift, Alpine.js, jQuery,
+            Tailwind CSS, Laravel Reverb, MySQL, PostgreSQL, Firebase, Vite, GitHub Actions
           </p>
         </article>
 
@@ -310,7 +316,37 @@
         <div class="skills__row">
           <div class="skills__tier">Working knowledge</div>
           <div class="skills__items">
-            Angular · Ionic + Capacitor · Riverpod · Firebase · Docker
+            Java 21 · Spring Boot 3 · Spring Data JPA · JUnit 5 and MockMvc · Maven · Angular ·
+            Ionic + Capacitor · Riverpod · Firebase · Docker
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">Personal projects with public code</h2>
+        <div class="repo">
+          <div class="repo__name">Biblioteca API</div>
+          <div class="repo__body">
+            A library-loan REST API in <b>Java 21 and Spring Boot 3.5</b>: catalog, members and the
+            borrowing process with overdue control. <b>43 tests, 88.9% coverage.</b>
+            <span class="repo__url">github.com/AndrewsMorales/biblioteca-api</span>
+          </div>
+        </div>
+        <div class="repo">
+          <div class="repo__name">Pedidos · Flujo</div>
+          <div class="repo__body">
+            A <b>Laravel</b> API built on a state machine: every transition checks whether it is
+            legal, moves inventory and writes an audit entry in the same transaction; idempotent
+            payment webhook. <b>39 tests.</b>
+            <span class="repo__url">github.com/AndrewsMorales/pedidos-flujo</span>
+          </div>
+        </div>
+        <div class="repo">
+          <div class="repo__name">Offline Sync Kit</div>
+          <div class="repo__body">
+            A <b>TypeScript</b> offline-sync library: hybrid logical clocks and field-level merge.
+            <b>33 tests, 95% coverage, zero runtime dependencies.</b>
+            <span class="repo__url">github.com/AndrewsMorales/offline-sync-kit</span>
           </div>
         </div>
       </section>

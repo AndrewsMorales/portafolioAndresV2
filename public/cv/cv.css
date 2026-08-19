@@ -5,7 +5,9 @@
 
 @page {
   size: A4;
-  margin: 11mm 13mm 10mm;
+  /* El margen lo pone .sheet: así el área útil es la misma en pantalla y en
+     PDF, y no depende de cómo interprete @page el motor de impresión. */
+  margin: 0;
 }
 
 :root {
@@ -25,10 +27,14 @@
   margin: 0;
 }
 
+.sheet {
+  padding: 9mm 12mm 8mm;
+}
+
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 8.45pt;
-  line-height: 1.31;
+  font-size: 8.25pt;
+  line-height: 1.25;
   color: var(--ink);
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -48,8 +54,8 @@ ul {
 
 .head {
   border-bottom: 2.2pt solid var(--accent);
-  padding-bottom: 6pt;
-  margin-bottom: 8pt;
+  padding-bottom: 5pt;
+  margin-bottom: 6pt;
 }
 
 .head__name {
@@ -90,7 +96,7 @@ ul {
 /* ---------- Secciones ---------- */
 
 .section {
-  margin-top: 6pt;
+  margin-top: 4.6pt;
   break-inside: auto;
 }
 
@@ -120,7 +126,7 @@ ul {
 .edge {
   display: flex;
   flex-direction: column;
-  gap: 3pt;
+  gap: 2.2pt;
 }
 
 .edge li {
@@ -149,8 +155,8 @@ ul {
 
 .job {
   break-inside: avoid;
-  padding-bottom: 4.5pt;
-  margin-bottom: 4.5pt;
+  padding-bottom: 3.6pt;
+  margin-bottom: 3.6pt;
   border-bottom: 0.7pt solid var(--rule-soft);
 }
 
@@ -197,10 +203,10 @@ ul {
 }
 
 .job__points {
-  margin-top: 3pt;
+  margin-top: 2.4pt;
   display: flex;
   flex-direction: column;
-  gap: 1.9pt;
+  gap: 1.5pt;
 }
 
 .job__points li {
@@ -389,4 +395,40 @@ ul {
     background: #fff;
     box-shadow: 0 10px 40px rgb(20 22 28 / 0.18);
   }
+}
+
+/* ---------- Proyectos con código público ---------- */
+
+.repo {
+  display: flex;
+  gap: 7pt;
+  align-items: baseline;
+  padding: 2.2pt 0;
+  border-bottom: 0.7pt solid var(--rule-soft);
+}
+
+.repo:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.repo__name {
+  flex: 0 0 74pt;
+  font-weight: 750;
+  font-size: 8.5pt;
+}
+
+.repo__body {
+  color: var(--ink-soft);
+}
+
+.repo__body b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.repo__url {
+  color: var(--ink-dim);
+  font-size: 7.8pt;
+  white-space: nowrap;
 }
