@@ -3,7 +3,14 @@ import { certifications, studies } from './education';
 import { jobs } from './experience';
 import { cvFor, profile, stats, strengths, yearsOfExperience } from './profile';
 import { projects } from './projects';
-import { SKILL_LEVELS, byLevel, orderedCategories, skillCategories, skillCount } from './skills';
+import {
+  SKILL_LEVELS,
+  byLevel,
+  orderedCategories,
+  skillCategories,
+  skillCount,
+  skillName,
+} from './skills';
 import type { Localized } from '../i18n/types';
 
 /** Recorre un objeto y devuelve todos los textos bilingües que encuentre. */
@@ -119,6 +126,16 @@ describe('proyectos', () => {
       .forEach((project) => expect(project.image).toMatch(/^\/images\/.+\.(jpg|png|webp)$/));
   });
 
+  it('nombra la tecnología igual en los dos idiomas', () => {
+    // Las etiquetas de stack se pintan tal cual, sin pasar por el diccionario:
+    // una que lleve palabras en español aparecería así en la versión inglesa.
+    const soloEspanol = /\b(y|de|en|con|sin|para)\b/i;
+
+    projects.forEach((project) => {
+      project.tech.forEach((tech) => expect(tech).not.toMatch(soloEspanol));
+    });
+  });
+
   it('usa enlaces https en repositorio y demo', () => {
     projects.forEach((project) => {
       if (project.repo) expect(project.repo).toMatch(/^https:\/\//);
@@ -198,6 +215,28 @@ describe('habilidades', () => {
         new Set(skillCategories.map((c) => c.id)),
       );
     });
+  });
+
+  it('traduce las habilidades cuyo nombre lleva palabras de un idioma', () => {
+    // Una etiqueta con «y», «de» o «en» sueltas es castellano: si se deja como
+    // texto plano, aparece tal cual en la versión inglesa del sitio.
+    const soloEspanol = /\b(y|de|en|con|sin|para)\b/i;
+
+    skillCategories
+      .flatMap((category) => category.skills)
+      .filter((skill) => typeof skill.name === 'string')
+      .forEach((skill) => {
+        expect(skill.name as string).not.toMatch(soloEspanol);
+      });
+  });
+
+  it('devuelve un nombre no vacío en los dos idiomas', () => {
+    skillCategories
+      .flatMap((category) => category.skills)
+      .forEach((skill) => {
+        expect(skillName(skill, 'es').trim()).not.toBe('');
+        expect(skillName(skill, 'en').trim()).not.toBe('');
+      });
   });
 
   it('no muta el arreglo original al reordenar', () => {

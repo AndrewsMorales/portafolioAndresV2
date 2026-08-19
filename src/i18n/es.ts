@@ -47,7 +47,7 @@ export const es = {
   'hero.pitch.full':
     'Construyo aplicaciones web y móviles de punta a punta: del modelo de datos y la API hasta la interfaz que usa el cliente. PHP, Laravel, Go, JavaScript y Flutter.',
   'hero.pitch.backend':
-    'Diseño APIs REST, modelos de datos y lógica de negocio que aguantan producción: Laravel 12, Symfony, Go, multi-tenant, RBAC e integraciones con sistemas externos.',
+    'Diseño APIs REST, modelos de datos y lógica de negocio que aguantan producción: Laravel 12, Symfony, Go, Java con Spring Boot, multi-tenant, RBAC e integraciones con sistemas externos.',
   'hero.pitch.frontend':
     'Construyo interfaces rápidas, responsivas y accesibles: Blade, Alpine, jQuery y React, con Tailwind o Bootstrap, i18n y modo offline. Cuatro años maquetando lo que otros solo consumen.',
   'hero.cta.projects': 'Ver proyectos',

@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { LEVEL_LABEL, byLevel, orderedCategories } from '../../data/skills';
+import { LEVEL_LABEL, byLevel, orderedCategories, skillName } from '../../data/skills';
 import { useReveal } from '../../hooks/useReveal';
 import { useApp } from '../../state/useApp';
 import { FocusSwitch } from '../ui/FocusSwitch';
@@ -7,7 +7,7 @@ import { SectionHeading } from '../ui/SectionHeading';
 import './Skills.css';
 
 export function Skills() {
-  const { t, focus } = useApp();
+  const { t, focus, lang } = useApp();
   const categories = orderedCategories(focus);
 
   // El reordenar categorías monta nodos nuevos: hay que volver a observarlos.
@@ -46,8 +46,11 @@ export function Skills() {
                   </h4>
                   <ul className="skills__list">
                     {group.skills.map((skill) => (
-                      <li key={skill.name} className={`skills__skill is-${group.level}`}>
-                        {skill.name}
+                      <li
+                        key={skillName(skill, 'es')}
+                        className={`skills__skill is-${group.level}`}
+                      >
+                        {skillName(skill, lang)}
                       </li>
                     ))}
                   </ul>

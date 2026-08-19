@@ -48,7 +48,7 @@ export const en: Dict = {
   'hero.pitch.full':
     'I build web and mobile applications end to end: from the data model and the API to the interface the customer actually uses. PHP, Laravel, Go, JavaScript and Flutter.',
   'hero.pitch.backend':
-    'I design REST APIs, data models and business logic that hold up in production: Laravel 12, Symfony, Go, multi-tenant, RBAC and third-party integrations.',
+    'I design REST APIs, data models and business logic that hold up in production: Laravel 12, Symfony, Go, Java with Spring Boot, multi-tenant, RBAC and third-party integrations.',
   'hero.pitch.frontend':
     'I build fast, responsive, accessible interfaces: Blade, Alpine, jQuery and React, with Tailwind or Bootstrap, i18n and offline support. Four years writing the markup others only consume.',
   'hero.cta.projects': 'View projects',

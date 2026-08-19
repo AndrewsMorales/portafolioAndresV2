@@ -1,4 +1,4 @@
-import type { DictKey } from '../i18n/types';
+import type { DictKey, Localized } from '../i18n/types';
 import type { Focus } from '../state/context';
 
 /**
@@ -19,8 +19,18 @@ export const LEVEL_LABEL: Record<SkillLevel, DictKey> = {
 };
 
 export interface Skill {
-  name: string;
+  /**
+   * Un `string` cuando el nombre es el mismo en los dos idiomas —«Laravel 12»
+   * no se traduce— y un par es/en cuando lleva palabras que sí: «Colas, jobs y
+   * cron» no puede quedarse así en la versión en inglés.
+   */
+  name: string | Localized;
   level: SkillLevel;
+}
+
+/** El nombre en el idioma activo, venga como texto suelto o como par es/en. */
+export function skillName(skill: Skill, lang: 'es' | 'en'): string {
+  return typeof skill.name === 'string' ? skill.name : skill.name[lang];
 }
 
 export interface SkillCategory {
@@ -39,11 +49,16 @@ export const skillCategories: SkillCategory[] = [
       { name: 'REST APIs', level: 'daily' },
       { name: 'MySQL / MariaDB', level: 'daily' },
       { name: 'Eloquent ORM', level: 'daily' },
-      { name: 'Multi-tenant y RBAC', level: 'shipped' },
+      { name: { es: 'Multi-tenant y RBAC', en: 'Multi-tenant and RBAC' }, level: 'shipped' },
       { name: 'WebSockets (Reverb / Echo)', level: 'shipped' },
-      { name: 'Colas, jobs y cron', level: 'shipped' },
+      { name: { es: 'Colas, jobs y cron', en: 'Queues, jobs and cron' }, level: 'shipped' },
       { name: 'Symfony', level: 'shipped' },
       { name: 'Go', level: 'shipped' },
+      { name: 'Java 21', level: 'working' },
+      { name: 'Spring Boot 3', level: 'working' },
+      { name: 'Spring Data JPA / Hibernate', level: 'working' },
+      { name: { es: 'JUnit 5 y MockMvc', en: 'JUnit 5 and MockMvc' }, level: 'working' },
+      { name: 'Maven', level: 'working' },
       { name: 'PostgreSQL', level: 'shipped' },
       { name: 'SQLite', level: 'shipped' },
       { name: 'SQL Server', level: 'shipped' },
@@ -60,11 +75,13 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Alpine.js', level: 'daily' },
       { name: 'jQuery', level: 'daily' },
       { name: 'Tailwind CSS', level: 'daily' },
-      { name: 'Diseño responsivo y UI/UX', level: 'daily' },
+      { name: { es: 'Diseño responsivo y UI/UX', en: 'Responsive design and UI/UX' }, level: 'daily' },
       { name: 'Vite', level: 'daily' },
-      { name: 'i18n (es / en)', level: 'daily' },
+      // Los «es» y «en» de aquí son códigos de idioma, no preposiciones: la
+      // etiqueta se lee igual en los dos, y así queda declarado.
+      { name: { es: 'i18n (es / en)', en: 'i18n (es / en)' }, level: 'daily' },
       { name: 'Bootstrap', level: 'shipped' },
-      { name: 'PWA y modo offline', level: 'shipped' },
+      { name: { es: 'PWA y modo offline', en: 'PWA and offline mode' }, level: 'shipped' },
       { name: 'TypeScript', level: 'shipped' },
       { name: 'React', level: 'shipped' },
       { name: 'Leaflet / OpenStreetMap', level: 'shipped' },
@@ -76,8 +93,8 @@ export const skillCategories: SkillCategory[] = [
     titleKey: 'skills.cat.mobile',
     skills: [
       { name: 'Flutter / Dart', level: 'shipped' },
-      { name: 'Drift / SQLite offline-first', level: 'shipped' },
-      { name: 'ML Kit (OCR en dispositivo)', level: 'shipped' },
+      { name: { es: 'Drift / SQLite offline-first', en: 'Drift / SQLite offline-first' }, level: 'shipped' },
+      { name: { es: 'ML Kit (OCR en dispositivo)', en: 'ML Kit (on-device OCR)' }, level: 'shipped' },
       { name: 'Riverpod', level: 'working' },
       { name: 'Ionic + Capacitor', level: 'working' },
     ],
@@ -90,9 +107,9 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Siigo API', level: 'shipped' },
       { name: 'Siesa', level: 'shipped' },
       { name: 'ICG', level: 'shipped' },
-      { name: 'Mercado Libre (pagos)', level: 'shipped' },
+      { name: { es: 'Mercado Libre (pagos)', en: 'Mercado Libre (payments)' }, level: 'shipped' },
       { name: 'Zona Pagos · PSE (BBVA)', level: 'shipped' },
-      { name: 'MikroTik (comandos remotos)', level: 'shipped' },
+      { name: { es: 'MikroTik (comandos remotos)', en: 'MikroTik (remote commands)' }, level: 'shipped' },
       { name: 'PhpSpreadsheet / Excel', level: 'shipped' },
       { name: 'Firebase', level: 'working' },
     ],
@@ -101,10 +118,10 @@ export const skillCategories: SkillCategory[] = [
     id: 'tools',
     titleKey: 'skills.cat.tools',
     skills: [
-      { name: 'Git y GitHub', level: 'daily' },
+      { name: { es: 'Git y GitHub', en: 'Git and GitHub' }, level: 'daily' },
       { name: 'Scrum', level: 'daily' },
       { name: 'GitHub Actions (CI/CD)', level: 'shipped' },
-      { name: 'Linux y despliegues', level: 'shipped' },
+      { name: { es: 'Linux y despliegues', en: 'Linux and deployments' }, level: 'shipped' },
       { name: 'Kanban', level: 'shipped' },
       { name: 'WordPress', level: 'shipped' },
       { name: 'Drupal', level: 'shipped' },
