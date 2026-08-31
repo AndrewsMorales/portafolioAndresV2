@@ -28,7 +28,6 @@ export const profile = {
     es: '/docs/CV-Andres-Morales-ES.pdf',
     en: '/docs/CV-Andres-Morales-EN.pdf',
   },
-  currentCompany: 'Smart Tech Software, LLC',
   links: {
     linkedin: 'https://www.linkedin.com/in/andres-david-morales-castro-54b12715a/',
     github: 'https://github.com/AndrewsMorales',

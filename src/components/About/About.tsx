@@ -14,7 +14,7 @@ export function About() {
       id: 'role',
       icon: 'code' as const,
       label: t('about.data.role'),
-      value: `${t('hero.role.full')} · ${profile.currentCompany}`,
+      value: t('hero.role.full'),
     },
     {
       id: 'modality',

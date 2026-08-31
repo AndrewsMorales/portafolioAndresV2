@@ -82,8 +82,8 @@ describe('experiencia', () => {
     });
   });
 
-  it('deja un único puesto vigente', () => {
-    expect(jobs.filter((job) => job.end === null)).toHaveLength(1);
+  it('no deja más de un puesto vigente a la vez', () => {
+    expect(jobs.filter((job) => job.end === null).length).toBeLessThanOrEqual(1);
   });
 
   it('separa la experiencia de desarrollo de la de soporte', () => {

@@ -29,11 +29,11 @@ export const jobs: Job[] = [
     },
     location: 'Bogotá D.C., Colombia',
     start: '2026-02',
-    end: null,
+    end: '2026-08',
     kind: 'dev',
     summary: {
-      es: 'Desarrollo de plataformas de negocio y comercio electrónico para una empresa de software de Delaware, trabajando en remoto sobre cuatro productos en paralelo: un CRM operativo, un ERP de venta en ruta, el administrador de proyectos de la compañía y su sitio corporativo.',
-      en: 'Building business and e-commerce platforms for a Delaware software company, working remotely across four products in parallel: an operational CRM, a route-sales ERP, the company project manager and its corporate site.',
+      es: 'Desarrollo de plataformas de negocio y comercio electrónico para una empresa de software de Delaware, trabajando en remoto sobre cuatro productos en paralelo: un CRM operativo, una plataforma de venta en ruta, el administrador de proyectos de la compañía y su sitio corporativo.',
+      en: 'Building business and e-commerce platforms for a Delaware software company, working remotely across four products in parallel: an operational CRM, a route-sales platform, the company project manager and its corporate site.',
     },
     highlights: [
       {
