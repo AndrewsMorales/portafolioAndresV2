@@ -20,7 +20,7 @@ export const profile = {
   fullName: 'Andrés David Morales Castro',
   initials: 'AM',
   location: 'Bogotá D.C., Colombia',
-  email: 'andresdavidmoralescastro0@gmail.com',
+  email: 'andres.morales0213@gmail.com',
   phone: '+57 301 649 0791',
   phoneRaw: '573016490791',
   photo: '/images/andres-morales.webp',
