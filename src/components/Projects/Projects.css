@@ -247,11 +247,13 @@
   color: var(--text-soft);
   transition:
     color 0.22s var(--ease),
-    border-color 0.22s var(--ease);
+    border-color 0.22s var(--ease),
+    background 0.22s var(--ease);
 }
 
 .projects__link:hover {
-  color: var(--brand-1);
-  border-color: color-mix(in srgb, var(--brand-1) 45%, transparent);
+  background: var(--brand-grad);
+  border-color: transparent;
+  color: #fff;
 }
 
