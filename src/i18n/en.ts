@@ -56,7 +56,7 @@ export const en: Dict = {
   'hero.cta.contact': "Let's talk",
   'hero.scroll': 'Scroll',
   'hero.card.title': 'Right now',
-  'hero.card.role': 'Full Stack · Smart Tech Software (USA)',
+  'hero.card.role': 'Looking for new opportunities · Full Stack Developer',
   'hero.card.stack': 'Laravel 12 · Go · Flutter · Alpine',
 
   // --- Stats ---

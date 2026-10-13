@@ -55,7 +55,7 @@ export const es = {
   'hero.cta.contact': 'Hablemos',
   'hero.scroll': 'Desliza',
   'hero.card.title': 'Ahora mismo',
-  'hero.card.role': 'Full Stack · Smart Tech Software (EE. UU.)',
+  'hero.card.role': 'Buscando nuevas oportunidades · Full Stack Developer',
   'hero.card.stack': 'Laravel 12 · Go · Flutter · Alpine',
 
   // --- Estadísticas ---
