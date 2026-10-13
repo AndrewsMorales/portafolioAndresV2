@@ -239,21 +239,20 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.45rem 0.85rem;
-  border: 1px solid var(--border);
+  border: 1px solid transparent;
   border-radius: 999px;
-  background: var(--surface-2);
+  background: var(--brand-grad);
   font-size: 0.83rem;
   font-weight: 600;
-  color: var(--text-soft);
+  color: #fff;
   transition:
     color 0.22s var(--ease),
     border-color 0.22s var(--ease),
-    background 0.22s var(--ease);
+    background 0.22s var(--ease),
+    opacity 0.22s var(--ease);
 }
 
 .projects__link:hover {
-  background: var(--brand-grad);
-  border-color: transparent;
-  color: #fff;
+  opacity: 0.9;
 }
 
