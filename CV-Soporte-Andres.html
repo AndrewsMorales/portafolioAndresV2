@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Andrés Morales — Soporte Técnico y Mantenimiento</title>
+    <style>
+      /* ============================================================
+         Copiado de cv.css para mantener consistencia total
+         ============================================================ */
+      :root {
+        --ink: #14161c;
+        --ink-soft: #3f4654;
+        --ink-dim: #6a7283;
+        --rule: #d9dde6;
+        --rule-soft: #eceff5;
+        --accent: #3f3391;
+        --accent-soft: #f0eefb;
+        --ok: #0d6b4d;
+        --ok-soft: #e7f4ef;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 8.25pt;
+        line-height: 1.25;
+        color: var(--ink);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      a { color: inherit; text-decoration: none; }
+      ul { list-style: none; padding: 0; }
+      .sheet { padding: 9mm 12mm 8mm; }
+      
+      /* Cabecera */
+      .head {
+        border-bottom: 2.2pt solid var(--accent);
+        padding-bottom: 5pt;
+        margin-bottom: 6pt;
+      }
+      .head__name {
+        font-size: 20.5pt;
+        font-weight: 800;
+        letter-spacing: -0.6pt;
+        line-height: 1.05;
+      }
+      .head__role {
+        margin-top: 2pt;
+        font-size: 10.6pt;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: 0.1pt;
+      }
+      .head__contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 3pt 12pt;
+        margin-top: 6pt;
+        font-size: 8.6pt;
+        color: var(--ink-soft);
+      }
+      .head__contact span::before {
+        content: "";
+        display: inline-block;
+        width: 3pt;
+        height: 3pt;
+        margin-right: 4.5pt;
+        vertical-align: 1.5pt;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      
+      /* Secciones */
+      .section { margin-top: 4.6pt; break-inside: auto; }
+      .section__title {
+        font-size: 8.2pt;
+        font-weight: 800;
+        letter-spacing: 1.3pt;
+        text-transform: uppercase;
+        color: var(--accent);
+        padding-bottom: 2pt;
+        border-bottom: 0.7pt solid var(--rule);
+        margin-bottom: 5pt;
+      }
+      .summary { color: var(--ink-soft); text-align: justify; }
+      .summary strong { color: var(--ink); font-weight: 700; }
+      
+      /* Experiencia */
+      .job {
+        break-inside: avoid;
+        padding-bottom: 3.6pt;
+        margin-bottom: 3.6pt;
+        border-bottom: 0.7pt solid var(--rule-soft);
+      }
+      .job:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+      .job__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 10pt;
+      }
+      .job__title {
+        font-size: 9.9pt;
+        font-weight: 750;
+        letter-spacing: -0.15pt;
+      }
+      .job__org { font-weight: 600; color: var(--accent); }
+      .job__meta {
+        flex-shrink: 0;
+        text-align: right;
+        font-size: 8.3pt;
+        color: var(--ink-dim);
+        white-space: nowrap;
+      }
+      .job__mode { display: block; font-size: 7.9pt; }
+      .job__intro { margin-top: 3pt; color: var(--ink-soft); }
+      .job__points {
+        margin-top: 2.4pt;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5pt;
+      }
+      .job__points li {
+        position: relative;
+        padding-left: 10pt;
+        color: var(--ink-soft);
+      }
+      .job__points li::before {
+        content: "–";
+        position: absolute;
+        left: 1pt;
+        color: var(--accent);
+        font-weight: 700;
+      }
+      .job__points b { color: var(--ink); font-weight: 700; }
+      .job__stack {
+        margin-top: 4pt;
+        font-size: 7.9pt;
+        color: var(--ink-dim);
+      }
+      .job__stack b {
+        color: var(--ink-soft);
+        font-weight: 700;
+        letter-spacing: 0.3pt;
+        text-transform: uppercase;
+        font-size: 7.6pt;
+      }
+      
+      /* Habilidades */
+      .skills__row {
+        display: flex;
+        gap: 8pt;
+        align-items: baseline;
+        padding: 2.5pt 0;
+        border-bottom: 0.7pt solid var(--rule-soft);
+      }
+      .skills__row:last-child { border-bottom: none; }
+      .skills__tier {
+        flex: 0 0 92pt;
+        font-size: 7.7pt;
+        font-weight: 800;
+        letter-spacing: 0.5pt;
+        text-transform: uppercase;
+        color: var(--ink-dim);
+      }
+      .skills__items { color: var(--ink-soft); }
+      .skills__group { display: block; margin-bottom: 1.5pt; }
+      .skills__group b { color: var(--ink); font-weight: 700; }
+      
+      /* Educación */
+      .split { display: flex; gap: 16pt; }
+      .split > * { flex: 1; min-width: 0; }
+      .study { margin-bottom: 2.6pt; }
+      .study__name { font-size: 8.7pt; font-weight: 700; }
+      .study__meta { font-size: 8.1pt; color: var(--ink-dim); }
+      
+      .foot {
+        margin-top: 5pt;
+        padding-top: 4pt;
+        border-top: 0.7pt solid var(--rule);
+        font-size: 8pt;
+        color: var(--ink-dim);
+        display: flex;
+        justify-content: space-between;
+        gap: 10pt;
+      }
+
+      @media screen {
+        body { background: #eef0f5; padding: 24px 12px; }
+        .sheet {
+          max-width: 210mm;
+          margin: 0 auto;
+          padding: 13mm 14mm;
+          background: #fff;
+          box-shadow: 0 10px 40px rgb(20 22 28 / 0.18);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="sheet">
+      <header class="head">
+        <h1 class="head__name">Andrés David Morales Castro</h1>
+        <p class="head__role">Especialista en Soporte Técnico y Mantenimiento de Sistemas</p>
+        <div class="head__contact">
+          <span>Bogotá D.C., Colombia</span>
+          <span>+57 3016490791</span>
+          <span>andres.morales0213@gmail.com</span>
+          <span>https://portafolio-andres-v2.vercel.app/</span>
+          <span>linkedin.com/in/andres-david-morales-castro-54b12715a</span>
+          <span>github.com/AndrewsMorales</span>
+          <span>Español (nativo) · Inglés (intermedio)</span>
+        </div>
+      </header>
+
+      <section class="section">
+        <h2 class="section__title">Perfil</h2>
+        <p class="summary">
+          Especialista en soporte técnico con amplia experiencia en diagnóstico y resolución de incidencias de <strong>hardware y software</strong>. 
+          Capacidad probada para brindar asistencia técnica en entornos de alta presión (Call Center) y soporte presencial. 
+          Experto en mantenimiento preventivo y correctivo de <strong>equipos de cómputo, servidores y redes</strong>, combinando habilidades técnicas 
+          con una fuerte orientación al servicio al cliente y la resolución eficiente de problemas.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">Habilidades Técnicas</h2>
+        
+        <div class="skills__row">
+          <div class="skills__tier">Hardware</div>
+          <div class="skills__items">
+            <span class="skills__group"><b>Mantenimiento:</b> Ensamblaje y reparación de PCs, mantenimiento preventivo/correctivo, diagnóstico de fallos físicos.</span>
+            <span class="skills__group"><b>Infraestructura:</b> Mantenimiento de servidores (Físicos y Virtuales), gestión de periféricos y estaciones de trabajo.</span>
+          </div>
+        </div>
+
+        <div class="skills__row">
+          <div class="skills__tier">Software</div>
+          <div class="skills__items">
+            <span class="skills__group"><b>Soporte:</b> Instalación y configuración de Windows y Linux, Office 365, Google Workspace.</span>
+            <span class="skills__group"><b>Herramientas:</b> Gestión de tickets y CRM, acceso remoto (AnyDesk, TeamViewer, RDP), herramientas de diagnóstico.</span>
+          </div>
+        </div>
+
+        <div class="skills__row">
+          <div class="skills__tier">Redes</div>
+          <div class="skills__items">
+            <span class="skills__group"><b>Conectividad:</b> Configuración de Routers y Switches, cableado estructurado, protocolos TCP/IP, DNS y DHCP.</span>
+            <span class="skills__group"><b>Sistemas:</strong> Administración básica de Active Directory, seguridad de red y firewalls.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">Experiencia profesional</h2>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Especialista en Soporte Técnico · <span class="job__org">Teleperformance</span>
+            </h3>
+            <div class="job__meta">
+              Mayo 2022 — Julio 2022
+              <span class="job__mode">Soporte Call Center · Remoto/Híbrido</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Soporte técnico especializado para Vodafone España, diagnosticando incidencias de telecomunicaciones para clientes residenciales y empresariales.
+          </p>
+          <ul class="job__points">
+            <li><b>Diagnóstico:</b> Pruebas de conectividad, revisión de configuración de equipos y validación de acceso a red.</li>
+            <li><b>Gestión:</b> Control integral de tickets, escalamiento a segundo nivel y coordinación con técnicos de campo.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Técnico de Soporte en Sitio · <span class="job__org">Disproel S.A.</span>
+            </h3>
+            <div class="job__meta">
+              Feb 2022 — Mar 2022
+              <span class="job__mode">Soporte Presencial · Bogotá</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Soporte técnico durante el escrutinio de las elecciones al Congreso 2022, asegurando la operatividad del sistema informático electoral.
+          </p>
+          <ul class="job__points">
+            <li><b>Hardware:</b> Mantenimiento preventivo y correctivo de estaciones de trabajo y periféricos.</li>
+            <li>Lideré la capacitación y guía a usuarios finales en el uso del software de escrutinio.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Aprendiz de Tecnología / Soporte de Datos · <span class="job__org">Telefónica (Movistar)</span>
+            </h3>
+            <div class="job__meta">
+              Ene 2021 — Jul 2021
+              <span class="job__mode">Práctica SENA · Bogotá</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Análisis y depuración de bases de datos de clientes reclamantes y aseguramiento de la calidad de la información.
+          </p>
+          <ul class="job__points">
+            <li><b>Automatización:</b> Creación de procesos de cargue masivo de datos mediante Excel, reduciendo errores operativos.</li>
+            <li>Análisis de casos y gestión de bases de datos masivas.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job__head">
+            <h3 class="job__title">
+              Analista de Sistemas y Soporte Técnico · <span class="job__org">Freelance / Contrato</span>
+            </h3>
+            <div class="job__meta">
+              2023 — 2026
+              <span class="job__mode">Soporte Nivel 2/3 · Remoto/Híbrido</span>
+            </div>
+          </div>
+          <p class="job__intro">
+            Soporte técnico especializado para aplicaciones empresariales (CRMs y ERPs) y gestión de infraestructura básica.
+          </p>
+          <ul class="job__points">
+            <li><b>Infraestructura:</b> Implementación y mantenimiento de servidores Linux para despliegue de aplicaciones.</li>
+            <li><b>Resolución:</b> Gestión de incidencias críticas en producción y optimización de bases de datos.</li>
+            <li><b>Redes:</b> Configuración de redes locales y despliegue de infraestructura para entornos de desarrollo.</li>
+          </ul>
+        </article>
+      </section>
+
+      <div class="split">
+        <section class="section">
+          <h2 class="section__title">Educación</h2>
+          <div class="study">
+            <p class="study__name">Técnico/Tecnólogo en Desarrollo de Software</p>
+            <p class="study__meta">SENA · Ene 2020 — Jul 2021</p>
+          </div>
+          <div class="study">
+            <p class="study__name">Ingeniería de Software <em>(en curso)</em></p>
+            <p class="study__meta">Corp. Universitaria Iberoamericana</p>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section__title">Certificaciones</h2>
+          <div class="study">
+            <p class="study__name">Mantenimiento de Hardware y Redes</p>
+            <p class="study__meta">Certificaciones Técnicas</p>
+          </div>
+          <div class="study">
+            <p class="study__name">Introducción a Ciberseguridad</p>
+            <p class="study__meta">Platzi · Ene 2025</p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="foot">
+        <span>Andrés David Morales Castro · Especialista en Soporte Técnico</span>
+        <span>Página 1 de 1</span>
+      </footer>
+    </main>
+  </body>
+</html>
